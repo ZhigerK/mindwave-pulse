@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: mindwave
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mindwave_core
+    ports:
+      - "5432:5432"
+
+  mongodb:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  # Keycloak, Airflow и RabbitMQ будут добавлены сюда позже
